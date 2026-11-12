@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<title>DeKa'i | Nürnberg</title>
+<meta name="description" content="DeKa'i Nürnberg – Burger, knusprige Nuggets, goldene Pommes und kostenlose Lieferung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080808;--panel:#111;--panel2:#171717;--gold:#d6a928;--gold2:#f5d879;--cream:#fff7df;--muted:#aaa397;--line:rgba(214,169,40,.22);--shadow:0 18px 55px #0009}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#f8f5ec;font-family:"DM Sans",sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{cursor:pointer}
+.container{width:min(1140px,92%);margin:auto}
+.topline{background:linear-gradient(90deg,#9b7011,var(--gold2),#9b7011);color:#171107;text-align:center;padding:9px 12px;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:20;background:#080808eF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font:700 1.85rem Oswald,sans-serif;letter-spacing:.07em;color:var(--gold2)}
+.logo span{color:#fff}
+.navlinks{position:relative;display:flex;align-items:center;gap:5px;padding:6px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.035));box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 8px 28px #0005;backdrop-filter:blur(18px) saturate(155%);-webkit-backdrop-filter:blur(18px) saturate(155%);color:#e9e2d2;font-size:.86rem;font-weight:800}
+.navlinks a{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:9px 17px;border:1px solid transparent;border-radius:999px;transition:background .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease;white-space:nowrap}
+.navlinks a:hover,.navlinks a.active{color:var(--gold2);background:linear-gradient(135deg,rgba(245,216,121,.2),rgba(214,169,40,.08));border-color:rgba(245,216,121,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 3px 14px #d6a92820}
+.navlinks a.active:after{content:"";position:absolute;bottom:3px;left:50%;width:14px;height:2px;border-radius:5px;background:var(--gold2);transform:translateX(-50%);box-shadow:0 0 10px var(--gold2)}
+.navright{display:flex;gap:10px;align-items:center}
+.cart-open,.gold-btn{border:0;border-radius:999px;background:linear-gradient(135deg,var(--gold2),#bd8b19);color:#171107;padding:12px 19px;font-weight:900;box-shadow:0 8px 25px #c99b2833}
+.cart-open{position:relative}
+.count{display:inline-grid;place-items:center;background:#111;color:var(--gold2);border:1px solid var(--gold);border-radius:50%;width:22px;height:22px;font-size:.72rem;margin-left:5px}
+.hero{position:relative;min-height:590px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(90deg,#080808 0%,#080808e8 38%,#08080830 100%),url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1800&q=90") center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--bg),transparent 28%,transparent 78%,#08080855);pointer-events:none}
+.hero-content{position:relative;z-index:1;padding:70px 0;max-width:650px}
+.eyebrow{color:var(--gold2);font-weight:900;letter-spacing:.22em;text-transform:uppercase;font-size:.76rem;margin-bottom:16px}
+h1,h2,h3{font-family:Oswald,sans-serif;text-transform:uppercase}
+h1{font-size:clamp(3.8rem,9vw,7rem);line-height:.95;letter-spacing:.015em;margin-bottom:20px}
+h1 em{font-style:normal;color:var(--gold2);text-shadow:0 4px 35px #d6a92844}
+.hero p{max-width:490px;color:#d5d0c5;font-size:1.05rem;margin-bottom:27px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.outline-btn{border:1px solid var(--gold);border-radius:999px;padding:12px 20px;font-weight:800;color:var(--cream);background:#08080877}
+.site-notice{max-width:1200px;margin:22px auto;padding:16px 20px;border:1px solid #8d6a20;border-left:4px solid var(--gold);border-radius:12px;background:#17130a;color:#e8dfcb;display:flex;gap:12px;align-items:flex-start;font-size:.9rem;line-height:1.55}
+.site-notice strong{color:var(--gold2);white-space:nowrap}
+.order-actions{display:grid;gap:10px;margin-top:12px}
+.full{width:100%;text-align:center;display:block}
+#openTelegram:disabled{opacity:.42;cursor:not-allowed}
+.copy-status{font-size:.78rem;color:#c7b98e;text-align:center;margin:10px 0 0;line-height:1.45}
+@media(max-width:600px){.site-notice{margin:14px 16px;display:block}.site-notice strong{display:block;margin-bottom:5px}}
+.trustbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#100e09}
+.trustgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:18px 0;text-align:center}
+.trustgrid strong{display:block;color:var(--gold2);font-size:.92rem}
+.trustgrid span{font-size:.77rem;color:var(--muted)}
+section.menu{padding:82px 0}
+.section-head{text-align:center;margin-bottom:32px}
+.kicker{color:var(--gold);font-size:.75rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
+.section-head h2{font-size:clamp(2.5rem,5vw,3.8rem);margin:5px 0;color:var(--cream)}
+.section-head p{color:var(--muted)}
+.featured{display:grid;grid-template-columns:1fr 1fr;background:linear-gradient(120deg,#201909,#100f0c);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:36px;box-shadow:var(--shadow)}
+.featured-img{min-height:270px;background:url("https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=1000&q=90") center/cover}
+.featured-copy{padding:32px;display:flex;flex-direction:column;justify-content:center}
+.pill{display:inline-block;width:max-content;border:1px solid var(--gold);border-radius:999px;color:var(--gold2);padding:5px 11px;font-size:.7rem;font-weight:900;letter-spacing:.12em;margin-bottom:10px}
+.featured h3{font-size:2.4rem;line-height:1.05}
+.featured .price-big{font-size:2rem;font-weight:900;color:var(--gold2);margin:8px 0}
+.featured p{color:#c8c0ad;margin-bottom:18px}
+.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-bottom:24px}
+.filter{border:1px solid var(--line);background:#111;color:#d9d2c3;border-radius:999px;padding:9px 17px;font-size:.83rem;font-weight:800}
+.filter.active,.filter:hover{background:var(--gold);border-color:var(--gold);color:#171107}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product{background:linear-gradient(160deg,#171717,#0e0e0e);border:1px solid #29251a;border-radius:18px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.product:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:var(--shadow)}
+.product.hide{display:none}
+.photo{height:210px;position:relative;overflow:hidden;background:#222}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.product:hover .photo img{transform:scale(1.06)}
+.tag{position:absolute;top:13px;left:13px;background:var(--gold2);color:#171107;padding:6px 10px;border-radius:999px;font-size:.68rem;font-weight:900;text-transform:uppercase}
+.product-body{padding:18px;display:flex;flex-direction:column;flex:1}
+.product-title{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.product h3{font-size:1.35rem;letter-spacing:.02em}
+.price{color:var(--gold2);font-weight:900;white-space:nowrap;font-size:1.05rem}
+.product p{color:var(--muted);font-size:.86rem;margin:9px 0 17px;flex:1}
+.add{width:100%;border:1px solid var(--gold);background:#211b0d;color:var(--gold2);padding:11px;border-radius:10px;font-weight:900;transition:.2s}
+.add:hover{background:var(--gold);color:#171107}
+.delivery{background:linear-gradient(120deg,#17130a,#0c0c0c);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:60px 0}
+.delivery-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.delivery h2{font-size:clamp(2.4rem,5vw,3.6rem);color:var(--gold2);line-height:1}
+.delivery p{color:#c6bead;margin-top:12px;max-width:570px}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.perk{background:#171717;border:1px solid var(--line);border-radius:12px;padding:13px;font-weight:800;font-size:.88rem}
+.perk span{display:block;color:var(--muted);font-size:.75rem;font-weight:500}
+.delivery-photo{height:270px;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.delivery-photo img{width:100%;height:100%;object-fit:cover}
+footer{padding:35px 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer .logo{display:inline-block;margin-bottom:8px}
+.drawer-bg{position:fixed;inset:0;background:#000a;z-index:40;opacity:0;visibility:hidden;transition:.25s}
+.drawer-bg.open{opacity:1;visibility:visible}
+.drawer{position:fixed;z-index:41;right:0;top:0;height:100dvh;width:min(440px,100%);background:#101010;border-left:1px solid var(--line);transform:translateX(105%);transition:.3s;display:flex;flex-direction:column}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line)}
+.drawer-head h2{font-size:1.7rem;color:var(--gold2)}
+.close{background:#242424;color:#fff;border:1px solid #444;border-radius:50%;width:38px;height:38px;font-size:1.1rem}
+.cart-list{padding:16px 20px;overflow:auto;flex:1}
+.empty{text-align:center;color:var(--muted);padding:45px 10px}
+.cart-row{display:grid;grid-template-columns:58px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #29251a}
+.cart-row img{width:58px;height:58px;object-fit:cover;border-radius:10px}
+.cart-row strong{font-size:.9rem}
+.cart-row small{display:block;color:var(--gold2);margin-top:3px}
+.qty{display:flex;align-items:center;gap:8px;margin-top:5px}
+.qty button{width:25px;height:25px;border-radius:50%;background:#272319;color:var(--gold2);font-weight:900}
+.drawer-bottom{border-top:1px solid var(--line);padding:18px 20px;max-height:55%;overflow:auto}
+.total{display:flex;justify-content:space-between;font-size:1.1rem;font-weight:900;margin-bottom:13px}
+.total strong{color:var(--gold2)}
+.formfield{margin:10px 0}
+.formfield label{display:block;color:#c7bdab;font-size:.75rem;font-weight:800;margin-bottom:5px}
+.formfield input,.formfield textarea{width:100%;background:#080808;border:1px solid #393224;border-radius:9px;color:#fff;padding:11px;outline:none}
+.formfield input:focus,.formfield textarea:focus{border-color:var(--gold)}
+.note{font-size:.75rem;color:var(--muted);margin:10px 0}
+.gold-btn.full{width:100%;margin-top:8px}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);background:var(--gold2);color:#171107;padding:12px 20px;border-radius:999px;font-weight:900;z-index:60;opacity:0;transition:.25s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:800px){.nav{gap:9px}.navlinks{display:flex;gap:2px;padding:4px;font-size:.75rem}.navlinks a{padding:8px 10px}.hero{min-height:560px;background-position:58% center}.hero:before{content:"";position:absolute;inset:0;background:#08080855}.grid{grid-template-columns:repeat(2,1fr)}.featured,.delivery-inner{grid-template-columns:1fr}.featured-img{min-height:220px}.delivery-photo{height:220px}}
+@media(max-width:540px){.nav{height:66px;gap:6px}.logo{font-size:1.2rem;letter-spacing:.03em}.navlinks{gap:1px;padding:3px;font-size:.68rem}.navlinks a{padding:7px 8px}.cart-open{padding:10px 13px;font-size:.82rem}.hero{min-height:520px}.hero-content{padding:65px 0}.hero p{font-size:.94rem}.trustgrid{gap:6px}.trustgrid strong{font-size:.78rem}.trustgrid span{font-size:.68rem}section.menu{padding:58px 0}.grid{grid-template-columns:1fr 1fr;gap:11px}.photo{height:135px}.product-body{padding:12px}.product h3{font-size:1.02rem}.product p{font-size:.75rem;margin:7px 0 12px}.price{font-size:.88rem}.add{font-size:.78rem;padding:10px 5px}.featured-copy{padding:22px}.featured h3{font-size:2rem}.perks{grid-template-columns:1fr 1fr}}
+
+/* Large TikTok-inspired glass bottom navigation on phones */
+.mobile-glass-nav{display:none}
+@media(max-width:700px){
+  body{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+  .mobile-glass-nav{position:fixed;z-index:50;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);align-items:center;gap:5px;min-height:88px;padding:9px 10px;border:1px solid rgba(255,255,255,.30);border-radius:30px;background:linear-gradient(150deg,rgba(255,255,255,.24),rgba(255,255,255,.085) 38%,rgba(214,169,40,.12) 100%);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.42),inset 0 -1px 0 rgba(255,255,255,.08),0 16px 42px rgba(0,0,0,.62),0 0 30px rgba(214,169,40,.17);backdrop-filter:blur(30px) saturate(190%);-webkit-backdrop-filter:blur(30px) saturate(190%);isolation:isolate}
+  .mobile-glass-nav:before{content:"";position:absolute;inset:1px 12% auto;height:1px;border-radius:50%;background:rgba(255,255,255,.75);filter:blur(1px);pointer-events:none}
+  .mobile-glass-nav a,.mobile-glass-nav button{position:relative;min-width:0;min-height:66px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid transparent;border-radius:22px;background:transparent;color:rgba(255,255,255,.88);font-size:.68rem;font-weight:800;letter-spacing:.015em;text-decoration:none;transition:transform .24s cubic-bezier(.2,.8,.2,1),color .24s,background .24s,box-shadow .24s;}
+  .mobile-glass-nav svg{position:relative;z-index:1;width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 4px #0008)}
+  .mobile-glass-nav a.active,.mobile-glass-nav button.active{color:#fff0bd;background:radial-gradient(circle at 50% 25%,rgba(255,242,195,.34),rgba(214,169,40,.20) 52%,rgba(214,169,40,.08));border-color:rgba(255,231,157,.50);box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 0 0 1px rgba(214,169,40,.12),0 0 24px rgba(245,216,121,.35),0 5px 18px rgba(0,0,0,.28);text-shadow:0 0 12px rgba(255,226,138,.45)}
+  .mobile-glass-nav a.active svg,.mobile-glass-nav button.active svg{filter:drop-shadow(0 0 7px rgba(255,226,138,.8))}
+  .mobile-glass-nav a:active,.mobile-glass-nav button:active{transform:scale(.91)}
+  .mobile-glass-nav .mobile-cart-count{font-size:.61rem;color:#171107;background:#f5d879;border-radius:99px;padding:1px 5px;margin-left:3px;vertical-align:1px}
+  header .navlinks{display:none}
+  header .nav{justify-content:space-between}
+}
+
+
+/* Cross-platform glass buttons + iOS Safari fixes */
+button,.gold-btn,.outline-btn,.add,.filter,.cart-open,.close,.qty button,
+.mobile-glass-nav a,.mobile-glass-nav button,input[type="button"],input[type="submit"]{
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 7px 22px rgba(0,0,0,.24);
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.gold-btn,.cart-open{background:linear-gradient(135deg,rgba(255,230,155,.96),rgba(189,139,25,.92));border:1px solid rgba(255,240,190,.55)}
+.outline-btn,.add,.filter,.close,.qty button{background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.035));border:1px solid rgba(214,169,40,.55)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+button,.mobile-glass-nav a,.mobile-glass-nav button{transition:transform .22s cubic-bezier(.2,.8,.2,1),filter .22s,box-shadow .22s,background .22s}
+button:active,.gold-btn:active,.outline-btn:active,.add:active,.filter:active,.cart-open:active,.qty button:active{transform:scale(.96);filter:brightness(1.12)}
+.order-limit-note{margin:0 0 13px;padding:11px 13px;border:1px solid rgba(255,255,255,.16);border-radius:13px;background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.035));color:#e9e2d2;font-size:.82rem;line-height:1.45}
+.order-limit-note.good{border-color:rgba(119,210,155,.45);color:#c7f5d8;background:rgba(47,135,84,.13)}
+.order-limit-note.warn{border-color:rgba(245,216,121,.48);color:#ffe7a2;background:rgba(214,169,40,.12)}
+.drawer{height:100vh;height:100dvh;padding-bottom:env(safe-area-inset-bottom);}
+.drawer-bottom{max-height:62%;max-height:62dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding-bottom:calc(18px + env(safe-area-inset-bottom))}
+.mobile-glass-nav{z-index:30!important}
+.drawer-bg{z-index:60!important}.drawer{z-index:61!important}
+.loyalty-panel{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 13px;margin:0 0 12px;border:1px solid rgba(214,169,40,.42);border-radius:13px;background:linear-gradient(135deg,rgba(245,216,121,.14),rgba(255,255,255,.035));color:#f7e8b6;font-size:.85rem}
+.loyalty-panel strong{font-size:1rem;color:var(--gold2);white-space:nowrap}
+.points-hint{font-size:.72rem;color:#c9bd9f;margin:0 0 8px}
+@media(max-width:700px){
+  .drawer{width:100%;max-width:100%;right:0;left:0;border-left:0}
+  .drawer-bottom{max-height:64vh;max-height:64dvh}
+  .order-actions{padding-bottom:8px}
+  .order-actions button{min-height:48px;font-size:.95rem}
+}
+
+
+.promo-zone{padding:68px 0 74px;background:radial-gradient(ellipse at 50% 0%,#5a431b44,transparent 65%),linear-gradient(180deg,#0b0a08,#11100c);border-top:1px solid #d6a92844;border-bottom:1px solid #d6a92844;overflow:hidden}.promo-heading{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:24px}.promo-heading h2{font-size:clamp(2rem,4.5vw,3.4rem);color:var(--cream);line-height:1.05}.promo-live{font-size:.7rem;letter-spacing:.12em;color:#f5d879;border:1px solid #d6a92866;border-radius:99px;padding:9px 13px;background:#d6a92812;white-space:nowrap}.promo-stage{position:relative;min-height:310px;border:1px solid #f5d87955;border-radius:28px;overflow:hidden;background:linear-gradient(120deg,#211908,#11100d 60%,#2a1d09);box-shadow:0 25px 80px #0009,inset 0 1px #ffffff22}.promo-slide{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr .95fr;opacity:0;visibility:hidden;transform:translateX(35px) scale(.985);transition:opacity .65s,transform .65s,visibility .65s}.promo-slide.active{position:relative;opacity:1;visibility:visible;transform:translateX(0) scale(1)}.promo-copy{padding:clamp(24px,5vw,55px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.promo-chip{padding:8px 14px;border-radius:99px;background:linear-gradient(135deg,#fff0b0,#d6a928);color:#201704;font-size:.76rem;font-weight:1000;letter-spacing:.08em;box-shadow:0 0 25px #f5d87944}.promo-copy h3{font-size:clamp(2.4rem,5vw,4rem);line-height:1;margin:17px 0 9px;color:#fff5d9}.promo-copy p{color:#c9c0ad;max-width:420px;margin-bottom:15px}.promo-prices{display:flex;align-items:center;gap:15px;margin-bottom:16px}.promo-prices del{color:#9e9687;font-size:1.15rem}.promo-prices strong{color:#f5d879;font-size:2rem}.promo-copy a{color:#f5d879;font-weight:900}.promo-art{min-height:310px;background-size:cover;background-position:center;mask-image:linear-gradient(90deg,transparent,#000 25%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 25%)}.promo-art-menu{background-image:url('https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=1000&q=90')}.promo-art-fries{background-image:url('https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=1000&q=90')}.promo-art-burger{background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000&q=90')}.promo-art-nuggets{background-image:url('https://images.unsplash.com/photo-1562967914-608f82629710?w=1000&q=90')}.promo-art-cola{background-image:url('https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=1000&q=90')}.promo-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px;color:#a99d82;font-size:.75rem}.promo-controls>button{width:38px;height:38px;border-radius:50%;border:1px solid #d6a92888;background:#ffffff0b;color:#f5d879;font-size:1.6rem;backdrop-filter:blur(12px)}.promo-dots{display:flex;gap:8px}.promo-dots button{width:9px;height:9px;border-radius:50%;background:#776744;border:0}.promo-dots button.active{width:26px;border-radius:99px;background:#f5d879;box-shadow:0 0 14px #f5d879}.experience-section{padding:85px 0;background:radial-gradient(ellipse at 15% 50%,#d6a9281a,transparent 45%),#0b0b0b}.experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.experience-image{min-height:390px;border-radius:26px;border:1px solid #d6a92855;background:url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=1100&q=90') center/cover;box-shadow:0 25px 65px #0009}.experience-grid h2{font-size:clamp(2.3rem,4.5vw,3.7rem);line-height:1.05;margin:10px 0 16px}.experience-grid h2 em{font-style:normal;color:#f5d879}.experience-grid p{color:#bdb5a5}.experience-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.experience-points div{padding:13px;border:1px solid #d6a92844;border-radius:12px;background:#ffffff08;color:#f5d879;font-weight:700;font-size:.85rem}.faq-section{padding:75px 0;background:#11100d;border-top:1px solid #d6a92833}.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.faq-grid article{padding:22px;border:1px solid #d6a92844;border-radius:17px;background:linear-gradient(135deg,#ffffff0d,#ffffff03);backdrop-filter:blur(18px)}.faq-grid h3{color:#f5d879;font-size:1.25rem;margin-bottom:8px}.faq-grid p{color:#bdb5a5;font-size:.9rem}@media(max-width:700px){.promo-zone{padding:48px 0}.promo-heading{align-items:flex-start;flex-direction:column}.promo-stage{min-height:490px}.promo-slide{grid-template-columns:1fr;grid-template-rows:1fr 180px}.promo-copy{padding:25px 23px 10px}.promo-art{min-height:180px;mask-image:linear-gradient(180deg,transparent,#000 20%);-webkit-mask-image:linear-gradient(180deg,transparent,#000 20%)}.promo-controls{gap:10px;flex-wrap:wrap}.experience-section,.faq-section{padding:55px 0}.experience-grid{grid-template-columns:1fr;gap:28px}.experience-image{min-height:250px}.experience-points,.faq-grid{grid-template-columns:1fr}}
+
+/* Handwritten menu lettering + clear promotion labels */
+.product h3,.featured h3{font-family:"Caveat",cursive;text-transform:none;letter-spacing:0;font-weight:700}
+.product h3{font-size:1.8rem;line-height:1.05;color:#fff4d4}
+.featured h3{font-size:2.9rem}
+.sale-price{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:5px}
+.sale-price del{font-size:.82rem;color:#8e887b;font-weight:600}
+.sale-price strong{font-size:1.12rem;color:var(--gold2);font-weight:1000}
+.sale-bubble{position:absolute;right:12px;top:12px;z-index:2;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,#fff0ad,#d6a928 65%,#8d6410);color:#1b1405;font-size:.82rem;line-height:1.05;font-weight:1000;box-shadow:0 0 0 4px #f5d87922,0 8px 25px #0009;transform:rotate(8deg)}
+.sale-ribbon{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:linear-gradient(135deg,#fff0b0,#d6a928);color:#201704;font-size:.68rem;font-weight:1000;letter-spacing:.08em;margin-bottom:9px;box-shadow:0 0 22px #f5d87930}
+.product-title{align-items:flex-start}
+@media(max-width:540px){.product h3{font-size:1.48rem}.sale-bubble{width:49px;height:49px;font-size:.72rem}.sale-price{gap:5px}.sale-price strong{font-size:1rem}}
+
+
+/* DeKa'i premium black & gold redesign */
+:root{--bg:#050505;--panel:#11100d;--panel2:#19150c;--gold:#d9a92e;--gold2:#ffe08a;--cream:#fff5d6;--muted:#b6ad9b;--line:rgba(245,205,103,.34);--shadow:0 22px 65px rgba(0,0,0,.72)}
+body{background:radial-gradient(ellipse at 50% -10%,#4a310e55,transparent 42%),#050505;color:#fff8e7}
+.topline{background:linear-gradient(90deg,#5b3d0b,#ffe7a0 48%,#6b490e);padding:8px 12px;font-size:.72rem;letter-spacing:.16em}
+header{background:rgba(5,5,5,.78);border-bottom:1px solid #f5d87955;backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%)}
+.nav{height:84px}.logo{font-family:'Caveat',cursive;font-size:3rem;letter-spacing:.01em;color:#ffe08a;text-shadow:0 0 20px #e6ad36aa;position:relative}.logo:before{content:'♛';font-family:Georgia,serif;font-size:1.15rem;vertical-align:top;margin-right:5px;color:#f5d879;text-shadow:0 0 14px #f5d879}
+.navlinks{border-color:#f5d87955;background:linear-gradient(140deg,#ffffff1c,#ffffff06 55%,#d6a92818);box-shadow:inset 0 1px 0 #ffffff40,0 10px 35px #0009,0 0 24px #d6a92818}
+.cart-open,.gold-btn{background:linear-gradient(135deg,#fff0b5 0%,#e0b33e 45%,#9c6b12 100%);color:#1b1304;border:1px solid #ffe9a6;box-shadow:inset 0 1px 0 #fff9,0 0 22px #d6a92838,0 9px 28px #0008}
+.hero{min-height:610px;border-bottom:1px solid #f5d87955;background-image:linear-gradient(90deg,rgba(4,4,4,.97) 0%,rgba(4,4,4,.78) 34%,rgba(4,4,4,.12) 100%),linear-gradient(0deg,#050505 0%,transparent 30%),url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1800&q=90');background-position:center;background-size:cover}
+.hero:after{background:linear-gradient(0deg,#050505 0%,transparent 24%,transparent 80%,#05050566)}
+.hero-content{max-width:660px;padding:82px 0}.eyebrow{color:#ffe08a;text-shadow:0 0 18px #d6a92866}.hero h1{font-family:'Caveat',cursive;text-transform:none;font-size:clamp(4.8rem,10vw,8rem);line-height:.82;letter-spacing:0;text-shadow:0 8px 35px #000}.hero h1 em{color:#ffdc78;text-shadow:0 0 35px #e0a72c88}.hero p{color:#f0e6d0;text-shadow:0 2px 12px #000;font-size:1.08rem}
+.outline-btn{border:1px solid #f5d87999;border-radius:999px;background:linear-gradient(135deg,#ffffff18,#ffffff05);backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 #ffffff35,0 8px 25px #0008}
+.promo-zone{background:radial-gradient(ellipse at 50% 0%,#76511638,transparent 60%),#080706;padding:64px 0 70px}
+.promo-heading h2,.section-head h2{font-family:'Caveat',cursive;text-transform:none;font-size:clamp(2.8rem,6vw,4.5rem);color:#fff1c7;letter-spacing:0}
+.promo-stage{border:1px solid #f5d87999;border-radius:26px;background:linear-gradient(125deg,#211707,#090909 62%,#30200b);box-shadow:0 0 0 1px #f5d8791c,0 20px 70px #000,inset 0 1px 0 #ffffff35}
+.promo-slide{grid-template-columns:1fr 1fr}.promo-copy h3{font-family:'Caveat',cursive;text-transform:none;font-size:clamp(3rem,6vw,5rem);color:#fff4d5}.promo-chip{box-shadow:0 0 24px #f5d87955}.promo-art{filter:saturate(1.08) contrast(1.05)}
+.trustbar{background:linear-gradient(90deg,#100d07,#171108,#100d07);border-color:#f5d87955}.trustgrid strong{color:#ffe08a}
+section.menu{padding:76px 0 88px;background:radial-gradient(ellipse at 50% 0%,#d6a92812,transparent 45%)}
+.section-head h2{margin:0}.section-head p{color:#c5bba7}
+.featured{position:relative;border:1px solid #f5d87977;border-radius:25px;background:linear-gradient(115deg,#241907,#100d08 65%,#261a08);box-shadow:0 24px 65px #000,inset 0 1px 0 #ffffff24}.featured-img{min-height:330px;position:relative}.featured-img:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,#100d08aa)}.featured-copy{padding:clamp(24px,4vw,48px)}.featured h3{font-family:'Caveat',cursive;font-size:3.4rem;color:#fff2cb}.featured p{color:#d1c5ac}.sale-ribbon{box-shadow:0 0 25px #d6a92855}
+.filters{gap:10px}.filter{border-color:#d6a92866;background:linear-gradient(135deg,#ffffff12,#ffffff04);backdrop-filter:blur(12px)}.filter.active,.filter:hover{background:linear-gradient(135deg,#fff0b5,#d6a928);box-shadow:0 0 20px #d6a92855}
+.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.product{position:relative;background:linear-gradient(155deg,#20190d 0%,#100f0d 48%,#080808 100%);border:1px solid #f5d87966;border-radius:20px;box-shadow:0 15px 38px #0009,inset 0 1px 0 #ffffff20}.product:hover{border-color:#ffe08a;box-shadow:0 0 0 1px #f5d87933,0 18px 48px #000,0 0 28px #d6a92825}.photo{height:230px;background:#17120a}.photo:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(0deg,#080706b8,transparent);pointer-events:none}.photo img{filter:saturate(1.1) contrast(1.06)}.tag{z-index:2;background:linear-gradient(135deg,#fff0b5,#d6a928);box-shadow:0 4px 15px #0008}.sale-bubble{right:11px;top:11px}.product-body{padding:17px}.product h3{font-family:'Caveat',cursive;font-size:2rem;color:#fff0c8}.sale-price{display:flex;flex-direction:column;align-items:flex-end;gap:0}.sale-price del{font-size:.76rem;color:#a9a091}.sale-price strong{font-size:1.22rem;color:#ffe08a;text-shadow:0 0 15px #d6a92855}.product p{color:#c7bdab}.add{border:1px solid #f5d879;background:linear-gradient(135deg,#fff0b5,#d6a928 55%,#a87516);color:#1a1204;border-radius:999px;font-weight:1000;box-shadow:inset 0 1px 0 #fff9,0 5px 18px #0008}.add:hover{background:linear-gradient(135deg,#fff8d9,#f0c34c);color:#120d03;box-shadow:0 0 24px #d6a92877}
+.delivery{background:radial-gradient(ellipse at 80% 50%,#68440e33,transparent 45%),linear-gradient(120deg,#171108,#080808);border-color:#f5d87955}.delivery h2{font-family:'Caveat',cursive;text-transform:none;font-size:clamp(3rem,6vw,5rem);line-height:.9}.perk{border-color:#d6a92855;background:linear-gradient(135deg,#ffffff12,#ffffff04);backdrop-filter:blur(12px)}.delivery-photo,.experience-image{border-color:#f5d87988;box-shadow:0 20px 60px #000,inset 0 1px 0 #ffffff33}
+.experience-section{background:radial-gradient(ellipse at 15% 50%,#d6a92822,transparent 48%),#080808}.experience-grid h2{font-family:'Caveat',cursive;text-transform:none;font-size:clamp(3rem,6vw,5rem)}.experience-points div{background:linear-gradient(135deg,#ffffff12,#ffffff04);backdrop-filter:blur(12px);border-color:#d6a92855}
+.faq-section{background:#100e09;border-color:#d6a92844}.faq-grid article{background:linear-gradient(135deg,#ffffff12,#ffffff04);border-color:#d6a92855;backdrop-filter:blur(14px)}footer{border-top:1px solid #d6a92844;background:#050505}footer .logo{font-size:3rem}
+.drawer{background:linear-gradient(160deg,#1a150b,#090909 45%);border-left:1px solid #f5d87966;box-shadow:-20px 0 70px #000}.formfield input,.formfield textarea{background:#090806;border-color:#6b5529}.toast{box-shadow:0 0 28px #d6a92855}
+button,.gold-btn,.outline-btn,.add,.filter,.cart-open,.close,.qty button{transition:transform .2s ease,filter .2s ease,box-shadow .2s ease}button:active,.gold-btn:active,.outline-btn:active,.add:active,.filter:active,.cart-open:active{transform:scale(.97)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.photo{height:205px}}
+@media(max-width:700px){.nav{height:70px}.logo{font-size:2.35rem}.hero{min-height:540px;background-position:58% center}.hero-content{padding:66px 0}.hero h1{font-size:clamp(4.2rem,18vw,6.3rem)}.promo-zone{padding:48px 0}.promo-stage{min-height:485px}.promo-slide{grid-template-columns:1fr;grid-template-rows:1fr 185px}.promo-copy{padding:24px 22px 8px}.promo-copy h3{font-size:3.3rem}.promo-art{min-height:185px}.trustgrid{grid-template-columns:repeat(2,1fr);row-gap:15px}.featured{grid-template-columns:1fr}.featured-img{min-height:225px}.featured-copy{padding:25px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.photo{height:155px}.product-body{padding:12px}.product h3{font-size:1.55rem}.product p{font-size:.76rem}.sale-bubble{width:48px;height:48px;font-size:.68rem}.sale-price strong{font-size:1.02rem}.sale-price del{font-size:.68rem}.add{font-size:.76rem;padding:10px 5px}.delivery{padding:48px 0}.delivery-photo{height:220px}.experience-section{padding:55px 0}.experience-image{min-height:245px}.faq-section{padding:50px 0}}
+@media(max-width:370px){.product h3{font-size:1.35rem}.photo{height:132px}.sale-bubble{width:43px;height:43px}.sale-price strong{font-size:.92rem}.product-body{padding:10px}}
+
+</style>
+
+<style id="ios-and-order-help-fixes">
+html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; scroll-behavior:smooth }
+body{ min-height:100vh; min-height:-webkit-fill-available; overflow-x:hidden }
+img{max-width:100%; height:auto}
+button,a,input,textarea{-webkit-tap-highlight-color:transparent}
+.drawer{height:100vh;height:100dvh;height:-webkit-fill-available;max-height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:calc(18px + env(safe-area-inset-bottom))}
+.drawer-bottom{padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+.mobile-glass-nav{padding-bottom:env(safe-area-inset-bottom)}
+.order-help{margin:14px 0;padding:16px;border:1px solid rgba(214,169,40,.5);border-radius:16px;background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(214,169,40,.06));color:#eee5d1;font-size:.88rem;line-height:1.55}
+.order-help h3{margin:0 0 9px;color:#f5d879;font-size:1.05rem}
+.order-help ol{margin:0 0 10px;padding-left:21px}
+.order-help li{margin:5px 0}
+.order-help a{color:#ffe08a;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.order-help .install-link{display:inline-block;margin-top:8px;padding:8px 11px;border:1px solid #d6a92888;border-radius:999px;text-decoration:none}
+@supports(height:100dvh){.drawer{height:100dvh}}
+@media(max-width:700px){.drawer{width:100%;max-width:100%;right:0;left:0;border-left:0}.order-help{font-size:.86rem}}
+</style>
+</head>
+<body>
+<div class="topline">✦ Kostenlose Lieferung · Lieferzeit bis zu 90 Minuten · Nürnberg ✦</div>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">DeKa'i</a>
+    <nav class="navlinks"><a href="#home">Start</a><a href="#menu">Speisekarte</a><a href="#delivery">Lieferung</a></nav>
+    <div class="navright"><button class="cart-open" id="openCart">Warenkorb <span class="count" id="count">0</span></button></div>
+  </div>
+</header>
+
+<nav class="mobile-glass-nav" aria-label="Hauptnavigation">
+  <a href="#home" class="active" data-mobile-tab="home" aria-label="Start">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Start</span>
+  </a>
+  <a href="#menu" data-mobile-tab="menu" aria-label="Speisekarte">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M5 8a7 7 0 0 1 14 0M4 12h16M5 12l1 7h12l1-7M8 15h.01M12 15h.01M16 15h.01"/></svg><span>Menü</span>
+  </a>
+  <a href="#delivery" data-mobile-tab="delivery" aria-label="Lieferung">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v12H3zM14 10h4l3 3v5h-7zM7 18a2 2 0 1 0 4 0M16 18a2 2 0 1 0 4 0"/></svg><span>Lieferung</span>
+  </a>
+  <button type="button" id="mobileOpenCart" aria-label="Warenkorb öffnen">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6M10 21h.01M18 21h.01"/></svg><span>Warenkorb <b class="mobile-cart-count" id="mobileCount">0</b></span>
+  </button>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div class="eyebrow">✦ DeKa'i · NÜRNBERG ✦</div>
+    <h1>GOLDENER<br><em>GESCHMACK.</em></h1>
+    <p>Knusprig. Saftig. Frisch zubereitet. Entdecke unsere Burger, Nuggets und goldenen Pommes – direkt zu dir nach Hause.</p>
+    <div class="hero-actions"><a class="gold-btn" href="#menu">Speisekarte entdecken →</a><a class="outline-btn" href="#delivery">Lieferinfos</a></div>
+  </div>
+</section>
+
+
+<section class="promo-zone" aria-label="Aktuelle Aktionen">
+ <div class="container">
+  <div class="promo-heading"><div><span class="kicker">Nur für kurze Zeit</span><h2>DEINE DEALS. DEIN GENUSS.</h2></div><span class="promo-live">● AKTUELLE AKTIONEN</span></div>
+  <div class="promo-stage" id="promoStage">
+   <article class="promo-slide active"><div class="promo-copy"><span class="promo-chip">−21% AKTION</span><h3>GOLDEN MENU</h3><p>Chicken Burger, Pommes und Cola – dein goldener Klassiker.</p><div class="promo-prices"><del>6,99 €</del><strong>5,49 €</strong></div><a href="#menu">Jetzt entdecken →</a></div><div class="promo-art promo-art-menu" role="img" aria-label="Burger Menü"></div></article>
+   <article class="promo-slide"><div class="promo-copy"><span class="promo-chip">−20% AKTION</span><h3>POMMES FRITES</h3><p>Goldbraun, knusprig und frisch – gönn dir deine Lieblingsbeilage.</p><div class="promo-prices"><del>2,49 €</del><strong>1,99 €</strong></div><a href="#menu">Jetzt entdecken →</a></div><div class="promo-art promo-art-fries" role="img" aria-label="Pommes Frites"></div></article>
+   <article class="promo-slide"><div class="promo-copy"><span class="promo-chip">−29% AKTION</span><h3>CHICKEN BURGER</h3><p>Knuspriges Chicken und frische Zutaten in einem Burger.</p><div class="promo-prices"><del>4,19 €</del><strong>2,99 €</strong></div><a href="#menu">Jetzt entdecken →</a></div><div class="promo-art promo-art-burger" role="img" aria-label="Chicken Burger"></div></article>
+   <article class="promo-slide"><div class="promo-copy"><span class="promo-chip">−18% AKTION</span><h3>CHICKEN NUGGETS</h3><p>Außen crunchy, innen zart – perfekt zum Dippen.</p><div class="promo-prices"><del>5,49 €</del><strong>4,49 €</strong></div><a href="#menu">Jetzt entdecken →</a></div><div class="promo-art promo-art-nuggets" role="img" aria-label="Chicken Nuggets"></div></article>
+   <article class="promo-slide"><div class="promo-copy"><span class="promo-chip">−17% AKTION</span><h3>COLA 700 ML</h3><p>Eiskalt und prickelnd – die Erfrischung zu deinem Menü.</p><div class="promo-prices"><del>1,19 €</del><strong>0,99 €</strong></div><a href="#menu">Jetzt entdecken →</a></div><div class="promo-art promo-art-cola" role="img" aria-label="Cola"></div></article>
+  </div>
+  <div class="promo-controls"><button type="button" id="promoPrev" aria-label="Vorherige Aktion">‹</button><div id="promoDots" class="promo-dots" aria-label="Aktion auswählen"><button class="active" aria-label="Aktion 1"></button><button aria-label="Aktion 2"></button><button aria-label="Aktion 3"></button><button aria-label="Aktion 4"></button><button aria-label="Aktion 5"></button></div><button type="button" id="promoNext" aria-label="Nächste Aktion">›</button><span>Wechselt automatisch</span></div>
+ </div>
+</section>
+
+<div class="site-notice" role="note">
+  <strong>⚠️ Wichtiger Hinweis</strong>
+  <span>Diese Website befindet sich noch im Aufbau. Trotz sorgfältiger Prüfung können technische Fehler oder Störungen auftreten. Falls etwas nicht funktioniert oder du ein Problem bemerkst, schreib uns bitte direkt per Telegram eine private Nachricht an <b>@Dekai08</b>. Vielen Dank für dein Verständnis!</span>
+</div>
+
+<div class="trustbar"><div class="container trustgrid">
+  <div><strong>🚚 0,00 € Lieferung</strong><span>In ganz Nürnberg</span></div>
+  <div><strong>⏱️ Bis zu 90 Minuten</strong><span>Voraussichtliche Lieferzeit</span></div>
+  <div><strong>💶 Barzahlung</strong><span>Einfach bei Übergabe zahlen</span></div>
+  <div><strong>🍔 Frisch gemacht</strong><span>Dein Genuss, unser Anspruch</span></div>
+</div></div>
+
+<section class="menu" id="menu"><div class="container">
+  <div class="section-head"><div class="kicker">✦ Aktuelle Angebote</div><h2>Die Speisekarte</h2><p>Alle Aktionspreise direkt am Produkt – alte Preise durchgestrichen, neue Preise gold markiert.</p></div>
+  <div class="featured">
+    <div class="featured-img" role="img" aria-label="Burger Menü mit Pommes"></div>
+    <div class="featured-copy"><span class="sale-ribbon">✦ AKTION · −21%</span><h3>Golden Menu</h3><div class="sale-price"><del>6,99 €</del><strong class="price-big">5,49 €</strong></div><p>Chicken Burger + Pommes Frites + Cola. Das goldene Trio für deinen Hunger.</p><button class="gold-btn" data-add="Golden Menu" data-price="5.49" data-img="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=500&q=85">Menü hinzufügen +</button></div>
+  </div>
+  <div class="filters">
+    <button class="filter active" data-filter="all">Alles</button><button class="filter" data-filter="burger">Burger</button><button class="filter" data-filter="chicken">Chicken</button><button class="filter" data-filter="sides">Beilagen</button><button class="filter" data-filter="drinks">Getränke</button>
+  </div>
+  <div class="grid" id="products">
+    <article class="product" data-category="burger"><div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700&q=85" alt="Saftiger Chicken Burger"><span class="tag">Beliebt</span><span class="sale-bubble">−29%<br>AKTION</span></div><div class="product-body"><div class="product-title"><h3>Chicken Burger</h3><span class="price sale-price"><del>4,19 €</del><strong>2,99 €</strong></span></div><p>Saftiger Burger mit knusprigem Chicken und frischen Zutaten.</p><button class="add" data-add="Chicken Burger" data-price="2.99" data-img="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&q=80">In den Warenkorb +</button></div></article>
+    <article class="product" data-category="sides"><div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=700&q=85" alt="Goldene Pommes Frites"><span class="tag">Goldbraun</span><span class="sale-bubble">−20%<br>AKTION</span></div><div class="product-body"><div class="product-title"><h3>Pommes Frites</h3><span class="price sale-price"><del>2,49 €</del><strong>1,99 €</strong></span></div><p>Außen knusprig, innen weich – goldene Pommes, frisch serviert.</p><button class="add" data-add="Pommes Frites" data-price="1.99" data-img="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=300&q=80">In den Warenkorb +</button></div></article>
+    <article class="product" data-category="chicken"><div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1562967914-608f82629710?w=700&q=85" alt="Knusprige Chicken Nuggets"><span class="tag">Crunchy</span><span class="sale-bubble">−18%<br>AKTION</span></div><div class="product-body"><div class="product-title"><h3>Chicken Nuggets</h3><span class="price sale-price"><del>5,49 €</del><strong>4,49 €</strong></span></div><p>Goldbraun paniert, zart im Inneren und perfekt zum Dippen.</p><button class="add" data-add="Chicken Nuggets" data-price="4.49" data-img="https://images.unsplash.com/photo-1562967914-608f82629710?w=300&q=80">In den Warenkorb +</button></div></article>
+    <article class="product" data-category="drinks"><div class="photo"><img loading="lazy" src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=700&q=85" alt="Eiskalte Cola"><span class="tag">700 ml</span><span class="sale-bubble">−17%<br>AKTION</span></div><div class="product-body"><div class="product-title"><h3>Cola 700 ml</h3><span class="price sale-price"><del>1,19 €</del><strong>0,99 €</strong></span></div><p>Eiskalt, prickelnd und die perfekte Erfrischung zum Burger.</p><button class="add" data-add="Cola 700 ml" data-price="0.99" data-img="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=300&q=80">In den Warenkorb +</button></div></article>
+  </div>
+</div></section>
+
+<section class="delivery" id="delivery"><div class="container delivery-inner">
+  <div><div class="kicker">Einfach bestellen</div><h2>GOLDENER GENUSS<br>AN DEINER TÜR.</h2><p>Wir liefern kostenlos innerhalb Nürnbergs. Die Lieferzeit beträgt je nach Auslastung bis zu 90 Minuten. Bezahle bequem bar bei der Lieferung. Nach deiner Bestellung kannst du die Bestellübersicht kopieren und direkt an uns auf Telegram senden.</p>
+    <div class="perks"><div class="perk">🚚 Gratis Lieferung<span>Ganz Nürnberg</span></div><div class="perk">⏱️ Lieferzeit<span>Bis zu 90 Minuten</span></div><div class="perk">💶 Barzahlung<span>Bei Übergabe</span></div><div class="perk">📋 Einfacher Bestellweg<span>Bestellung kopieren</span></div><div class="perk">📲 Direkter Kontakt<span>Telegram: <a href="https://t.me/Dekai08" target="_blank" rel="noopener">@Dekai08</a></span></div></div>
+  </div>
+  <div class="delivery-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1526367790999-0150786686a2?w=900&q=85" alt="Essenslieferung"></div>
+</div></section>
+
+<section class="experience-section"><div class="container experience-grid"><div class="experience-image" role="img" aria-label="Frisch zubereitetes Essen"></div><div><span class="kicker">DeKa'i Qualität</span><h2>FRISCH ZUBEREITET.<br><em>MIT LIEBE GELIEFERT.</em></h2><p>Bei DeKa'i steht guter Geschmack im Mittelpunkt. Ob saftiger Chicken Burger, knusprige Nuggets oder goldene Pommes – wir möchten, dass dein Essen frisch und lecker bei dir ankommt.</p><div class="experience-points"><div>✦ Frisch zubereitet</div><div>✦ Knuspriger Genuss</div><div>✦ Einfache Bestellung</div><div>✦ Kostenlose Lieferung in Nürnberg</div></div></div></div></section>
+<section class="faq-section" id="how-to-order" style="border-top:1px solid #d6a92844"><div class="container"><div class="section-head"><div class="kicker">In 4 einfachen Schritten</div><h2>SO BESTELLST DU</h2><p>Deine Bestellung wird vorbereitet – du sendest sie anschließend selbst an uns.</p></div><div class="faq-grid"><article><h3>1. Menü auswählen</h3><p>Wähle deine Produkte und lege sie in den Warenkorb. Der Bestellwert muss zwischen 7,00 € und 20,00 € liegen.</p></article><article><h3>2. Daten eintragen</h3><p>Öffne den Warenkorb und trage deinen Namen, deine Telefonnummer und deine Lieferadresse ein.</p></article><article><h3>3. Bestellung kopieren</h3><p>Tippe auf „Bestellung kopieren“. Danach wird die Schaltfläche zum Öffnen von Telegram freigeschaltet.</p></article><article><h3>4. In Telegram senden</h3><p>Tippe auf „Telegram öffnen“. Wenn Telegram installiert ist, öffnet sich unser Chat mit deiner vorbereiteten Nachricht. Prüfe sie und tippe in Telegram selbst auf „Senden“.</p><p><a href="https://t.me/Dekai08" target="_blank" rel="noopener">@Dekai08 – DeKa'i auf Telegram</a></p><a class="install-link" href="https://telegram.org/apps" target="_blank" rel="noopener">Telegram installieren ↗</a></article></div></div></section>
+<section class="faq-section"><div class="container"><div class="section-head"><div class="kicker">Gut zu wissen</div><h2>HÄUFIGE FRAGEN</h2><p>Die wichtigsten Infos zu deiner Bestellung.</p></div><div class="faq-grid"><article><h3>Wie lange dauert die Lieferung?</h3><p>Die Lieferzeit beträgt je nach Auslastung bis zu 90 Minuten.</p></article><article><h3>Was kostet die Lieferung?</h3><p>Die Lieferung innerhalb Nürnbergs ist kostenlos.</p></article><article><h3>Wie kann ich bezahlen?</h3><p>Du bezahlst bequem bar bei Übergabe deiner Bestellung.</p></article><article><h3>Wie bestelle ich?</h3><p>Lege deine Produkte in den Warenkorb, kopiere die Bestellung und sende sie selbst über Telegram an @Dekai08.</p></article></div></div></section>
+</main>
+<footer><div class="container"><a class="logo" href="#home">DeKa'i</a><p>Frisch · Knusprig · Goldrichtig</p><p>© 2026 DeKa'i · Nürnberg</p></div></footer>
+
+<div class="drawer-bg" id="drawerBg"></div>
+<aside class="drawer" id="drawer" aria-label="Warenkorb">
+  <div class="drawer-head"><h2>Dein Warenkorb</h2><button class="close" id="closeCart" aria-label="Schließen">×</button></div>
+  <div class="cart-list" id="cartList"><div class="empty">Dein Warenkorb ist noch leer 🍔</div></div>
+  <div class="drawer-bottom">
+    <div class="total"><span>Gesamtsumme</span><strong id="total">0,00 €</strong></div>
+    <div class="order-limit-note" id="orderLimitNote" role="status" aria-live="polite">Mindestbestellwert: 7,00 € · Maximalbestellwert: 20,00 €</div>
+    <div class="formfield"><label for="customerName">VOR- UND NACHNAME *</label><input id="customerName" placeholder="Dein Name" autocomplete="name"></div>
+    <div class="formfield"><label for="customerPhone">TELEFONNUMMER *</label><input id="customerPhone" placeholder="+49 ..." type="tel" autocomplete="tel"></div>
+    <div class="formfield"><label for="customerAddress">LIEFERADRESSE IN NÜRNBERG *</label><input id="customerAddress" placeholder="Straße, Hausnummer, PLZ" autocomplete="street-address"></div>
+    <div class="formfield"><label for="customerNote">ANMERKUNG</label><textarea id="customerNote" rows="2" placeholder="Klingel, Wünsche ..."></textarea></div>
+    <p class="note">🚚 Lieferung: kostenlos · Lieferzeit: bis zu 90 Minuten · Zahlung: bar bei Lieferung. Nach dem Kopieren Telegram öffnen und die Nachricht selbst senden.</p>
+    <div class="order-help"><h3>So schickst du deine Bestellung</h3><ol><li>Fülle alle Pflichtfelder aus.</li><li>Tippe auf <b>„Bestellung kopieren“</b>.</li><li>Tippe auf <b>„Telegram öffnen“</b>.</li><li>In Telegram die vorbereitete Nachricht prüfen und selbst auf <b>„Senden“</b> tippen.</li></ol><a href="https://t.me/Dekai08" target="_blank" rel="noopener">Direkt zu @Dekai08</a><br><a class="install-link" href="https://telegram.org/apps" target="_blank" rel="noopener">Telegram noch nicht installiert? App holen ↗</a></div>
+    <div class="order-actions">
+      <button class="gold-btn full" id="copyOrder">Bestellung kopieren</button>
+      <button class="outline-btn full" id="openTelegram" disabled>Telegram öffnen ↗</button>
+    </div>
+  </div>
+</aside>
+<div class="toast" id="toast">Zum Warenkorb hinzugefügt</div>
+
+<script>
+(() => {
+ const cart = [];
+ const drawer = document.getElementById('drawer');
+ const bg = document.getElementById('drawerBg');
+ const list = document.getElementById('cartList');
+ const count = document.getElementById('count');
+ const totalEl = document.getElementById('total');
+ const limitNote = document.getElementById('orderLimitNote');
+ const MIN_ORDER = 7.00, MAX_ORDER = 20.00;
+ const toast = document.getElementById('toast');
+ const fmt = n => n.toFixed(2).replace('.', ',') + ' €';
+ function open(){drawer.classList.add('open');bg.classList.add('open');document.getElementById('mobileOpenCart')?.classList.add('active')}
+ function close(){drawer.classList.remove('open');bg.classList.remove('open');document.getElementById('mobileOpenCart')?.classList.remove('active')}
+ document.getElementById('openCart').addEventListener('click',open);
+ document.getElementById('closeCart').addEventListener('click',close);
+ bg.addEventListener('click',close);
+ function render(){
+   const qty=cart.reduce((s,x)=>s+x.qty,0), sum=cart.reduce((s,x)=>s+x.qty*x.price,0);
+   count.textContent=qty; const mobileCount=document.getElementById("mobileCount"); if(mobileCount) mobileCount.textContent=qty; totalEl.textContent=fmt(sum);
+   limitNote.classList.remove('good','warn');
+   if(!cart.length){limitNote.classList.add('warn');limitNote.textContent='Füge Produkte hinzu. Mindestbestellwert: 7,00 € · Maximum: 20,00 €';list.innerHTML='<div class="empty">Dein Warenkorb ist noch leer 🍔</div>';return}
+   if(sum<MIN_ORDER){limitNote.classList.add('warn');limitNote.textContent=`Noch ${fmt(MIN_ORDER-sum)} bis zum Mindestbestellwert von 7,00 €.`}
+   else if(sum>MAX_ORDER){limitNote.classList.add('warn');limitNote.textContent=`Bitte entferne Produkte im Wert von mindestens ${fmt(sum-MAX_ORDER)}. Maximalbestellwert: 20,00 €.`}
+   else{limitNote.classList.add('good');limitNote.textContent='✓ Bestellwert passt! Du kannst zwischen 7,00 € und 20,00 € bestellen.'}
+   list.innerHTML=cart.map((x,i)=>`<div class="cart-row"><img src="${x.img}" alt=""><div><strong>${x.name}</strong><small>${fmt(x.price)}</small><div class="qty"><button data-dec="${i}" aria-label="Weniger">−</button><span>${x.qty}</span><button data-inc="${i}" aria-label="Mehr">+</button></div></div><strong>${fmt(x.price*x.qty)}</strong></div>`).join('');
+   list.querySelectorAll('[data-inc]').forEach(b=>b.addEventListener('click',()=>{cart[+b.dataset.inc].qty++;telegramBtn.disabled=true;copyBtn.textContent='Bestellung kopieren';render()}));
+   list.querySelectorAll('[data-dec]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.dec;cart[i].qty--;if(cart[i].qty<=0)cart.splice(i,1);telegramBtn.disabled=true;copyBtn.textContent='Bestellung kopieren';render()}));
+ }
+ document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{
+   const name=b.dataset.add, price=Number(b.dataset.price), img=b.dataset.img;
+    telegramBtn.disabled=true; copyBtn.textContent='Bestellung kopieren';
+   const found=cart.find(x=>x.name===name); if(found)found.qty++;else cart.push({name,price,img,qty:1});
+   render();toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1500);
+ }));
+ document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{
+   document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+   document.querySelectorAll('.product').forEach(p=>p.classList.toggle('hide',b.dataset.filter!=='all'&&p.dataset.category!==b.dataset.filter));
+ }));
+ const telegramBtn = document.getElementById('openTelegram');
+ const copyBtn = document.getElementById('copyOrder');
+ let orderMessage = '';
+ let shareFallbackUrl = '';
+
+ function legacyCopy(text){
+   const area=document.createElement('textarea');
+   area.value=text; area.setAttribute('readonly','');
+   area.style.position='fixed'; area.style.top='8px'; area.style.left='8px';
+   area.style.width='2px'; area.style.height='2px'; area.style.padding='0'; area.style.opacity='0.01'; area.style.fontSize='16px'; area.style.zIndex='-1';
+   document.body.appendChild(area);
+   area.focus({preventScroll:true}); area.select(); area.setSelectionRange(0,area.value.length);
+   let ok=false; try{ok=document.execCommand('copy');}catch(e){}
+   area.blur(); document.body.removeChild(area); return ok;
+ }
+ function buildOrder(){
+   if(!cart.length) return false;
+   const sum=cart.reduce((a,x)=>a+x.qty*x.price,0);
+   if(sum<MIN_ORDER || sum>MAX_ORDER){open();render();return false;}
+   const name=document.getElementById('customerName').value.trim();
+   const phone=document.getElementById('customerPhone').value.trim();
+   const address=document.getElementById('customerAddress').value.trim();
+   const note=document.getElementById('customerNote').value.trim();
+   if(!name||!phone||!address) return false;
+   const lines=cart.map(x=>`${x.qty} × ${x.name} — ${fmt(x.qty*x.price)}`).join('\n');
+   orderMessage=`🍔 DeKa'i — BESTELLUNG\n\n${lines}\n\nZwischensumme: ${fmt(sum)}\nLieferung: Kostenlos (bis zu 90 Minuten)\nGESAMT: ${fmt(sum)}\nZahlung: Bar bei Lieferung\n\nName: ${name}\nTelefon: ${phone}\nAdresse: ${address}\nAnmerkung: ${note||'Keine'}\n\nBitte Bestellung bestätigen.`;
+   shareFallbackUrl='https://t.me/Dekai08?text='+encodeURIComponent(orderMessage);
+   return true;
+ }
+ copyBtn.addEventListener('click',async()=>{
+   if(!buildOrder()) return;
+   let copied=false;
+   try{
+     if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(orderMessage);copied=true;}
+   }catch(e){}
+   if(!copied) copied=legacyCopy(orderMessage);
+   // On restrictive iOS/browser setups, keep a pre-filled Telegram share fallback available.
+   telegramBtn.disabled=false;
+   telegramBtn.dataset.copyMode=copied?'clipboard':'share';
+   copyBtn.setAttribute('aria-label',copied?'Bestellung kopiert':'Bestellung vorbereitet');
+   copyBtn.textContent=copied?'✓ Bestellung kopiert':'Bestellung vorbereitet';
+ });
+ telegramBtn.addEventListener('click',()=>{
+   if(!orderMessage) return;
+   const currentSum=cart.reduce((a,x)=>a+x.qty*x.price,0);
+   if(currentSum<MIN_ORDER || currentSum>MAX_ORDER){telegramBtn.disabled=true;open();render();return;}
+   // Telegram's universal username link opens the installed app on iOS/Android
+   // and opens Telegram's web landing page when the app is not installed.
+   // The text parameter pre-fills this exact business chat with the order.
+   const url=shareFallbackUrl || 'https://t.me/Dekai08';
+   window.location.href=url;
+ });
+ render();
+})();
+
+
+// Automatic rotating campaign carousel with manual controls and touch swipe.
+(()=>{const slides=[...document.querySelectorAll('.promo-slide')],dots=[...document.querySelectorAll('#promoDots button')];if(!slides.length)return;let index=0,timer;const show=n=>{index=(n+slides.length)%slides.length;slides.forEach((el,i)=>el.classList.toggle('active',i===index));dots.forEach((el,i)=>el.classList.toggle('active',i===index));};const restart=()=>{clearInterval(timer);timer=setInterval(()=>show(index+1),4200)};document.getElementById('promoPrev').addEventListener('click',()=>{show(index-1);restart()});document.getElementById('promoNext').addEventListener('click',()=>{show(index+1);restart()});dots.forEach((d,i)=>d.addEventListener('click',()=>{show(i);restart()}));let startX=0;const stage=document.getElementById('promoStage');stage.addEventListener('touchstart',e=>{startX=e.touches[0].clientX},{passive:true});stage.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>45){show(index+(dx<0?1:-1));restart()}},{passive:true});restart();})();
+
+// Glass navigation: highlight the tab for the section currently in view.
+document.getElementById('mobileOpenCart')?.addEventListener('click',()=>document.getElementById('openCart').click());
+const navLinks=[...document.querySelectorAll('.navlinks a')];
+const mobileTabs=[...document.querySelectorAll('[data-mobile-tab]')];
+const navSections=navLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
+if('IntersectionObserver' in window){
+  const navObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+entry.target.id));
+      mobileTabs.forEach(link=>link.classList.toggle('active',link.dataset.mobileTab===entry.target.id));}});
+  },{rootMargin:'-35% 0px -55% 0px',threshold:0});
+  navSections.forEach(section=>navObserver.observe(section));
+}
+</script>
+</body>
+</html>
